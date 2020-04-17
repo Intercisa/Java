@@ -1,0 +1,215 @@
+slightly different but much faster Java: 
+
+class Solution {
+    
+    PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+    public int lastStoneWeight(int[] stones) {
+        
+        for(int i=0;i<stones.length;i++)
+        {
+            pq.add(stones[i]);
+        }
+        
+        while(pq.size()!=1)
+        {
+            int x=pq.poll();
+            int y=pq.poll();
+            if(x!=y )
+                if(x<y)
+                 pq.add(y-x);
+                 else
+                 pq.add(x-y);
+            else
+                pq.add(0);
+        }
+        
+        int res= pq.poll();
+        return res;
+    }
+}
+
+
+cpp:
+
+    Create a Priority queue (pq)
+    as long as size of pq > 1:
+
+    every time pop two elements
+    subtract second from first
+    if res of subtractions is non-zero push this result back into pq
+    CODE:
+
+int lastStoneWeight(vector<int>& stones) {
+     priority_queue<int> pq;
+      
+     for(auto i : stones) pq.push(i);
+      
+      while(pq.size() > 1)
+      {
+          int a = pq.top(); 
+          pq.pop();
+          
+          int b = pq.top(); 
+          pq.pop();
+          
+          
+          if(a  - b > 0)
+              pq.push(a-b);
+      }
+      return pq.empty()?0:pq.top();  
+    }
+
+
+
+c#:
+
+The algorithm can be solved using minimum heap. To convert maximum two numbers to minimum two numbers, negative value is used instead.
+
+Here are highlights:
+
+    Understand C# SortedDictionary can be used to impelement minimum heap first;
+    Apply all ement value to negative one, so maximum heap turns into a minimum heap problem;
+    Get familiar with IEnumberable First API and it can be used to get the minimum one from the heap.
+
+public class Solution {
+    /// <summary>
+        /// Oct.4, 2019
+        /// Implement a maximum heap - 
+        /// what I can do is to use negative value 
+        /// </summary>
+        /// <param name="stones"></param>
+        /// <returns></returns>
+        
+        public int LastStoneWeight(int[] stones)
+        {
+            var sorted = new SortedDictionary<int, int>();
+
+            // put all numbers into minimum heap - default - negative value
+            foreach (var number in stones)
+            {
+                var key = number * (-1);
+                if (!sorted.ContainsKey(key))
+                {
+                    sorted.Add(key, 0);
+                }
+
+                sorted[key]++; 
+            }
+
+            while (!((sorted.Keys.Count == 1 && sorted[sorted.Keys.ToList()[0]] == 1) || sorted.Keys.Count == 0))
+            {
+                // get minimum two values from minimum heap
+                var key = sorted.Keys.First();
+                var hasAtLeastTwo = sorted[key] > 1;
+                if (hasAtLeastTwo)
+                {
+                    sorted[key] -= 2;
+                    if(sorted[key] == 0)
+                    {
+                        sorted.Remove(key);
+                    }
+                }
+                else 
+                {
+                    var minimum = key;
+                    sorted.Remove(key);
+                    var next = sorted.Keys.First();
+                    sorted[next]--;
+
+                    if (sorted[next] == 0)
+                    {
+                        sorted.Remove(next);
+                    }
+
+                    var diff = Math.Abs(minimum - next);
+                    var newKey = diff * (-1);
+
+                    if (newKey == 0)
+                        continue;
+
+                    if (!sorted.ContainsKey(newKey))
+                    {
+                        sorted.Add(newKey, 0);
+                    }
+
+                    sorted[newKey]++;
+                }                
+            }
+
+            if (sorted.Keys.Count == 0)
+                return 0;
+
+            return sorted.Keys.ToList()[0] * (-1);
+        }
+}
+
+
+Kotlin help: 
+
+https://bezkoder.com/kotlin-priority-queue/
+
+koltin heap solution: 
+
+class Solution {
+    class Heap {
+        private val items: MutableList<Int> = mutableListOf()
+        var size = 0
+		
+		private set
+        init {
+            // useless header element
+            items.add(0)
+        }
+        
+        fun push(x: Int) {
+            size += 1
+            items.add(x)
+            var pos = size
+            while (pos > 1 && items[pos] > items[parent(pos)]) {
+                swap(pos, parent(pos))
+                pos /= 2
+            }
+        }
+        
+        fun pop(): Int {
+            val result = items[1]
+            swap(1, size)
+            items.removeAt(items.lastIndex)
+            size -= 1
+            var pos = 1
+            while (true) {
+                val left = leftChild(pos)
+                val right = rightChild(pos)
+                if (left > size) break
+                val bestSon = if (right > size || items[left] > items[right]) { left }
+                else { right }
+                if (items[pos] >= items[bestSon]) break
+                swap(pos, bestSon)
+                pos = bestSon
+            }
+            return result
+        }
+        
+        private fun swap(i: Int, j: Int) {
+            val t = items[i]
+            items[i] = items[j]
+            items[j] = t
+        }
+        
+        private fun leftChild(i: Int) = i * 2
+        private fun rightChild(i: Int) = i * 2 + 1
+        private fun parent(i: Int) = i / 2
+    }
+    
+    fun lastStoneWeight(stones: IntArray): Int {
+        val heap = Heap()
+        stones.forEach{ heap.push(it) }
+        while (heap.size > 1) {
+            val newStone = heap.pop() - heap.pop()
+            if (newStone > 0) {
+                heap.push(newStone)
+            }
+        }
+        return if (heap.size > 0) { heap.pop() } else { 0 }
+    }
+}

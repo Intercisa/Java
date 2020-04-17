@@ -1,0 +1,141 @@
+cpp: 
+
+class MinStack {
+
+    vector<int> min;
+    vector<int> stack;
+    public:
+    MinStack() {
+        
+    }
+    
+    void push(int x) {
+        stack.push_back(x);
+        if(min.empty()||min.back()>=x)
+            min.push_back(x);
+    }
+    
+    void pop() {
+        if(stack.back()==min.back())
+            min.pop_back();
+        
+        stack.pop_back();
+    }
+    
+    int top() {
+        if(!stack.empty())
+        return stack.back();
+        
+        return -1;
+    }
+    
+    int getMin() {
+        if(!min.empty())
+        return min.back();
+        
+        return -1;
+    }
+};
+
+
+
+//or
+ 
+class MinStack {
+public:
+	stack<int> cache;
+	MinStack() {}
+
+	void push(int x) {
+		if (cache.empty()){
+			cache.push(x);
+			cache.push(x);
+		}else {
+			int val = cache.top();
+			cache.push(x);
+			val < x ? cache.push(val) : cache.push(x);
+		}
+	}
+
+	void pop() {
+		cache.pop();
+		cache.pop();
+	}
+
+	int top() {
+		int top = cache.top();
+		cache.pop();
+		int res = cache.top();
+		cache.push(top);
+		return res;
+	}
+
+	int getMin() {
+		return cache.top();
+	}
+};
+
+
+
+kotlin: 
+
+
+import kotlin.math.min
+
+class MinStack() {
+    
+    private var head: Node? = null
+
+    fun push(x: Int) {
+         head = if (head == null) Node(x, x) else Node(x, min(x, head!!.min), head)
+    }
+
+    fun pop() {
+         head = head!!.next
+    }
+
+    fun top(): Int {
+         return head!!.value
+    }
+
+    fun getMin(): Int {
+        return head!!.min
+    }
+    
+     private inner class Node(var value: Int, var min: Int, var next: Node? = null)
+
+}
+
+
+//or:
+
+class MinStack() {
+
+    val stack = mutableListOf<Int>()
+    var minValue = Int.MAX_VALUE
+
+    fun push(x: Int) {
+        minValue = if(minValue > x) x else minValue
+        stack.add(minValue)
+        stack.add(x)
+    }
+
+    fun pop() {
+        stack.removeAt(stack.size-1)
+        stack.removeAt(stack.size-1)
+        if(stack.size > 0)
+            minValue = stack[stack.size-2]
+        else
+            minValue = Int.MAX_VALUE
+    }
+
+    fun top(): Int {
+        return stack[stack.size-1]
+    }
+
+    fun getMin(): Int {
+        return minValue
+    }
+
+}
+

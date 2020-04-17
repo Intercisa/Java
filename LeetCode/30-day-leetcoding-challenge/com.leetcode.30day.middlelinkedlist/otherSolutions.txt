@@ -1,0 +1,37 @@
+
+cpp:
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        
+        ListNode* fast_ptr = head;
+        ListNode* slow_ptr = head;
+        
+        while (fast_ptr!= NULL && fast_ptr->next != NULL){
+            fast_ptr = fast_ptr->next->next;
+            slow_ptr = slow_ptr->next;
+        }
+        
+        return slow_ptr; 
+    }
+};
+
+kotlin:
+class Solution {
+    fun middleNode(head: ListNode?): ListNode? {
+        var fastPtr = head;
+        var slowPtr = head;
+        
+        while(fastPtr != null && fastPtr?.next != null){
+            fastPtr = fastPtr?.next?.next;
+            slowPtr = slowPtr?.next;
+        }
+        
+        return slowPtr;
+        
+        
+    }
+}
+
+
