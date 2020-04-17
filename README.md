@@ -1,2 +1,2 @@
 # Java
-Some of my project and just codes in general 
+Some of my projects and codes in general 
