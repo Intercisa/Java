@@ -2,6 +2,12 @@ package main;
 
 import subarraymax.MaximumSubarray;
 
+/*
+ * 
+ * Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+ * 
+ */
+
 public class Main {
 
 	public static void main(String[] args) {

@@ -1,21 +1,23 @@
 package main;
 
-import minstack.MinStack;
+import singlenum.SingleNumber;
+
+/*
+ * Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+	Note:
+	Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+ */
+
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		MinStack minStack = new MinStack();
-		minStack.push(-2);
-		minStack.push(0);
-		minStack.push(-3);
+		int[] arr = {2,2,1};
 		
-		System.out.println(minStack.getMin());
+		SingleNumber singleNumber = new SingleNumber();
 		
-		minStack.pop();
-		System.out.println(minStack.top());
-		System.out.println(minStack.getMin());
+		singleNumber.singleNumber(arr);
 
 	}
 

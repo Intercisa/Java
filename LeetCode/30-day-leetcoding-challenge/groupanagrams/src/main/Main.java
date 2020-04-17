@@ -2,6 +2,8 @@ package main;
 
 import groupanagrams.GroupAnagrams;
 
+//Given an array of strings, group anagrams together.
+
 public class Main {
 
 	public static void main(String[] args) {
