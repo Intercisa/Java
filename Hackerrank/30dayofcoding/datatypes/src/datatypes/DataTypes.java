@@ -7,8 +7,8 @@ public class DataTypes {
 	public void dataTypes() {
 	Scanner scan = new Scanner(System.in);
 	int i = 4;
-    double d = 4.0;
-    String s = "HackerRank ";
+    	double d = 4.0;
+    	String s = "HackerRank ";
     
 	
 	int numInt = scan.nextInt();
