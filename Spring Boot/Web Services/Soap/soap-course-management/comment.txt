@@ -1,0 +1,71 @@
+
+link for XML: XML Schema - http://edutechwiki.unige.ch/en/XML_Schema_tutorial_-_Basics
+
+Define an XML Structure 
+
+	GetCourseDetailsRequest -> GetCourseDetailsResponse
+	
+		input -> id - 123
+		output -> CourseDetails 
+		
+		
+XML schema: 
+<node>
+	<node1 attribute="value"></node1>
+	<node2></node2>
+</node>
+
+XML namespace:
+
+<GetCourseDetailsRequest xmlns="http://in28minutes.com/courses"> -> namespace, use this for not crushing other XML-s 
+	<id>123</id>
+	...
+	
+	
+XSD -> XML Schema Definition for Request
+
+
+<GetCourseDetailsRequest xmlns="http://in28minutes.com/courses" 
+	xsi:schemaLocation="http://in28minutes.com/courses course-details.xsd" -> we tie the xsd to the request by adding the the namespace and the xsd name + we define xsi below 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<id>123</id> <!-- numbers -->
+</GetCourseDetailsRequest>
+
+
+Security ->
+	Security with WS-Security 
+		-Authentication
+		-Digital signatures
+		-Certificates
+		
+	-Implementation -> XWSS - XML and Web Services Security
+		-Security Policy
+		-XwsSecurityInterceptor
+		
+	POM ->
+		<dependency>
+            <groupId>org.springframework.ws</groupId>
+            <artifactId>spring-ws-security</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.security</groupId>
+                    <artifactId>spring-security-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.wss</groupId>
+            <artifactId>xws-security</artifactId>
+            <version>3.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.xml.crypto</groupId>
+                    <artifactId>xmldsig</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1.1</version>
+        </dependency>	
