@@ -12,7 +12,7 @@ public class SearchInRotatedSortedArray {
 	
 	
 	 public int search(int[] nums, int target) {
-		 if(nums.length == 0) return -1;
+		 if(nums == null || nums.length == 0) return -1;
 		 
 		 if(target < nums[0]) //search in tail  
 			 return searchTail(nums, target);
