@@ -1,0 +1,63 @@
+java:
+
+	  public TreeNode bstFromPreorder(int[] preorder) {
+		  if(preorder == null || preorder.length == 0) return null;
+		  
+		  int n = preorder.length;
+		  
+		  TreeNode head = new TreeNode(preorder[0]); //the first element of the array is always the first value of the tree 
+		  
+		  if(n == 1) return head;
+		  
+		  for (int i = 1; i < n; i++) //you start from 1 because you want to compare the values, and zero element is already in head 
+			settingHead(head, preorder[i]);
+		  
+		  return head;
+		  
+	    }
+
+	private void settingHead(TreeNode node, int val) {
+		
+		if(node.val < val) { //in a binary tree for every node, any descendant of node.left has a value < node.val
+			if (node.right == null) //we check if the value is already set or not 
+				node.right = new TreeNode(val);
+			else
+				settingHead(node.right, val);//if there is already a value we go a level deeper 
+		}else {				//in a binary tree for every node, any descendant of node.right has a value > node.val
+			if(node.left == null) //we check if the value is already set or not 
+				node.left = new TreeNode(val);
+			else
+				settingHead(node.left, val); //if there is already a value we go a level deeper 
+		}
+	}
+	
+}
+
+
+cpp: 
+
+
+class Solution {
+public:
+    TreeNode* constructBinTree(TreeNode *root, int &cval) {
+        if(root==NULL) {
+            root=new TreeNode(cval);
+            
+        } else if(cval < root->val) {
+            root->left = constructBinTree(root->left, cval);
+        } else if( cval> root->val) {
+            root->right = constructBinTree(root->right, cval);
+        }
+        return root;
+        
+    }
+    
+    TreeNode* bstFromPreorder(vector<int>& preorder) {
+        TreeNode *root = constructBinTree(root,preorder[0]);
+        for(int i = 1; i<preorder.size() ;i++) {
+            constructBinTree(root,preorder[i]);
+        }
+        return root;
+    }
+    
+};
