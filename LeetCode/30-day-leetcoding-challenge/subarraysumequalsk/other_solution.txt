@@ -1,0 +1,17 @@
+cpp:
+
+	Prefix Sum Hash
+	
+	 int subarraySum(vector<int>& nums, int k) {
+        unordered_map<int, int> hash; 
+        int ans = 0; 
+        prefixsum = 0; 
+        hash[0] = 1;
+         
+        for(auto n : nums){
+            prefixsum += n;
+            ans += hash[prefixsum - k];
+            hash[prefixsum]++;
+        }
+        return ans;
+    }
