@@ -1,1 +1,13 @@
  H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+ 
+ 
+ after JPA implementation: 
+ 	delete from data.sql -> 
+			 		create table person(
+				id integer not null, 
+				name varchar(255) not null, 
+				location varchar(255),
+				birth_date timestamp,
+				primary key(id)
+			);
+ 		because the AutoConfiguration makes a schema update and that cause an error if the table declaration is there 

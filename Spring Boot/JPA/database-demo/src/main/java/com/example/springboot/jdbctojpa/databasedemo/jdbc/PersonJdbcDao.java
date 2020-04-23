@@ -19,6 +19,7 @@ public class PersonJdbcDao {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
+	//custom RowMapper
 	class PersonRowMapper implements RowMapper<Person>{
 
 		@Override

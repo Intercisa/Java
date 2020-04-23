@@ -2,8 +2,18 @@ package com.example.springboot.jdbctojpa.databasedemo.entity;
 
 import java.util.Date;
 
-public class Person {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
+@Entity
+@NamedQuery(name="find_all_persons", query="select p from Person p")
+public class Person {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String name;
 	private String location;
@@ -11,6 +21,7 @@ public class Person {
 	
 	public Person() {}
 	
+	//JDBC
 	public Person(Integer id, String name, String location, Date birthDate) {
 		super();
 		this.id = id;
@@ -18,6 +29,16 @@ public class Person {
 		this.location = location;
 		this.birthDate = birthDate;
 	}
+	
+	
+	//JPA/Hibernate (id is auto generated)
+	public Person(String name, String location, Date birthDate) {
+		super();
+		this.name = name;
+		this.location = location;
+		this.birthDate = birthDate;
+	}
+
 	public Integer getId() {return id;}
 	public void setId(Integer id) {this.id = id;}
 	public String getName() {return name;}
