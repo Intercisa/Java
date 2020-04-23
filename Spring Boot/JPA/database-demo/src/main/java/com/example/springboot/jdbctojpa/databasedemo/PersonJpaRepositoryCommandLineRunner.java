@@ -25,10 +25,8 @@ public class PersonJpaRepositoryCommandLineRunner  implements CommandLineRunner{
 		
 		log.info("All users -> {}", repository.findAll());
 		log.info("User with id=10001 -> {}", repository.findById(10001));
-		log.info("Insert user id=10009 -> {}", repository.insert(new Person(10009, "Timos", "Budapest", new Date())));
-		log.info("Update user id=10004 -> {}", repository.update(new Person(10004, "Kafka", "Prague", new Date())));
-		
-		
+		log.info("Insert user -> {}", repository.insert(new Person("Timos", "Budapest", new Date()))); //we don't need to assign the id, hibernate handles that
+		log.info("Update user id=10004 -> {}", repository.update(new Person(10004, "Kafka", "Prague", new Date())));	
 	}
 
 }

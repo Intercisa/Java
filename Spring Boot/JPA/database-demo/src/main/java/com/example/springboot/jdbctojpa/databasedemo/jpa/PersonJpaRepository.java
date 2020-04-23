@@ -35,7 +35,7 @@ public class PersonJpaRepository {
 	}
 
 
-	public Person insert(Person person){
+	public Person insert(Person person){ //no need for two method: insert and update, they are the same 
 		return entityManager.merge(person);
 	}
 	
