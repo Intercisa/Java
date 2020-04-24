@@ -50,9 +50,17 @@ class CourseRepositoryTest {
 		repository.save(course);
 		
 		assertEquals("Ubik", repository.findById(10001L).getName());
+	}
+	
+	@Test
+	@DirtiesContext //after the test automatically reset the data, so the other test won't fail 
+	void playinWithEntityManager() {
 		
+		repository.playingWithEntityManager();
 		
 	}
+	
+	
 	
 	
 }

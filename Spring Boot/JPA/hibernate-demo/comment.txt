@@ -1,2 +1,13 @@
  If you are using Junit version < 5, so you have to use @RunWith(SpringRunner.class) or @RunWith(MockitoJUnitRunner.class) etc.
  If you are using Junit version = 5, so you have to use @ExtendWith(SpringExtension.class) or @ExtendWith(MockitoExtension.class) etc.
+ 
+ 
+ IMPORTANT about Entity Manager: 
+	 as long you are in transaction and you manage something with entityManager 
+	 the changes will kept tracked by entityManager as long you are in the transaction   
+
+	 
+	 
+
+JPQL Entities <- difference -> SQL Tables
+	SELECT c  FROM Course c		-	SELECT * FROM COURSE 

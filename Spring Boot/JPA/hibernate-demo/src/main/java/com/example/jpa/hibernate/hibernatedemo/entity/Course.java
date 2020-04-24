@@ -23,7 +23,7 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return String.format("Course [id=%s, name=%s]", id, name);
+		return String.format("\nCourse [id=%s, name=%s]", id, name);
 	}
 
 	
