@@ -23,7 +23,7 @@ class CourseRepositoryTest {
 	
 	@Test
 	void findById_basic() {
-		assertEquals("The Castle", repository.findById(10001L).getName());
+		assertEquals("The Castle Course", repository.findById(10001L).getName());
 	}
 	
 	@Test
@@ -44,7 +44,7 @@ class CourseRepositoryTest {
 	void save_modest() {
 		
 		Course course = repository.findById(10001L);
-		assertEquals("The Castle", course.getName());
+		assertEquals("The Castle Course", course.getName());
 		course.setName("Ubik");
 		
 		repository.save(course);
