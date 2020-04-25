@@ -28,14 +28,15 @@ class JPQLTest {
 	EntityManager em;
 	
 	@Test
-	void selectAll_JPQLbasic() {
+	void selectAll_JPQL_basic() {
 		Query createQuery = em.createQuery("SELECT c  FROM Course c"); //normal query
 		List resultList = createQuery.getResultList();
 		log.info("SELECT c  FROM Course c -> {}", resultList);
 	}
 	
+	
 	@Test
-	void selectAllTyped_JPQLbasic() { //that's better 
+	void selectAllTyped_JPQL_basic() { //typed is better 
 		TypedQuery<Course> createQuery = em.createQuery("SELECT c  FROM Course c", Course.class); //typed query
 		List<Course> resultList = createQuery.getResultList();
 		log.info("SELECT c  FROM Course c -> {}", resultList);
@@ -43,8 +44,23 @@ class JPQLTest {
 	
 	
 	@Test
-	void selectWhere_JPQLbasic() { //that's better 
+	void selectAll_NamedQurey_basic() {
+		TypedQuery<Course> createQuery = em.createNamedQuery("query_get_all_courses", Course.class);
+		List<Course> resultList = createQuery.getResultList();
+		log.info("SELECT c  FROM Course c -> {}", resultList);
+	}
+	
+	
+	@Test
+	void selectWhere_JPQL_basic() { //that's better 
 		TypedQuery<Course> createQuery = em.createQuery("SELECT c  FROM Course c where name like '%Trial'", Course.class); //typed
+		List<Course> resultList = createQuery.getResultList();
+		log.info("SELECT c  FROM Course c where name like '%Trial' -> {}", resultList);
+	}
+	
+	@Test
+	void selectWhere_NamedQurey_basic() { 
+		TypedQuery<Course> createQuery = em.createNamedQuery("query_select_Trial", Course.class); //typed
 		List<Course> resultList = createQuery.getResultList();
 		log.info("SELECT c  FROM Course c where name like '%Trial' -> {}", resultList);
 	}
