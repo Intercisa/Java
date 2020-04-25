@@ -1,4 +1,4 @@
-package minimumpathsum;
+package jumpgame;
 
 public class JumpGame {
 		
