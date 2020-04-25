@@ -10,9 +10,9 @@ Some REST and SOAP example.
 
 ## LeetCode
 My solutions for the 30 day coding challenge.
-And other challenges form the site. Practice, Practice, Practice!
+And off course other challenges form the site. Practice, Practice, Practice!
 
 ## Hackerrank
 My solutions for the 30 day coding challenge.
-And other challenges form the site. Practice, Practice, Practice!
+And off course other challenges form the site. Practice, Practice, Practice!
  
