@@ -1,6 +1,7 @@
 package com.example.jpa.hibernate.hibernatedemo.repository;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,11 +28,32 @@ class StudentRepositoryTest {
 	@Autowired
 	StudentRepository repository;
 	
+	//Session & Session Factory
+	//EntityManager & Persistence Context
+	//Transactional
+	
 	@Test
+	//@Transactional //Persistence Context - without @Transactional all calls have their own transaction 
+	//if just one operation fail - all should fail -> roll back -> that is the importance of @Transactional
+	public void someTest() {
+		repository.someOperationToUnderstandPersistenceContext();
+	}
+	
+	@Test
+	@Transactional
 	void retrieve_student_and_passport() {
 		Student student = em.find(Student.class, 20001L);
-		log.info("studnet -> {}", student);
-		Passport passport = student.getPassport();
+		log.info("studnet -> {}", student); //if Passport in Student -> fetch = FetchType.LAZY the transaction ends here  
+		Passport passport = student.getPassport(); //if FetchType.LAZY -> && there is no @Transactional on the method -> throws an LazyInitializationException
 		log.info("passport -> {}", passport);
+	}
+	
+	@Test
+	@Transactional
+	void retrieve_passport_and_associatedStudent() {
+		Passport passport = em.find(Passport.class, 40001L);
+		log.info("passport -> {}", passport); 
+		log.info("student -> {}", passport.getStudent()); 
+	 
 	}
 }

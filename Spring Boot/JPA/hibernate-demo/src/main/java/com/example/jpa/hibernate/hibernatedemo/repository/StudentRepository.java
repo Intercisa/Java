@@ -31,21 +31,48 @@ public class StudentRepository {
 		return student;
 	}
 	
-	public void saveStudentWithPassport() {
-		Passport passport = new Passport("Z123456");//create passport
-		em.persist(passport);						//persist passport
-		
-		Student student = new Student("Balage"); //create student
-												
-		student.setPassport(passport);			//establish relationship	
-		em.persist(student);					//persist student
-	}
-	
 	
 	public void deleteById(Long id) {
 		Student student = findById(id);
 		em.remove(student);
 	}
+	
+	public void saveStudentWithPassport() {
+		Passport passport = new Passport("Z123456");//create passport
+		em.persist(passport);						//persist passport
+		
+		Student student = new Student("Balage"); //create student
+		
+		student.setPassport(passport);			//establish relationship	
+		em.persist(student);					//persist student
+	}
+	
+	
+	
+	public void someOperationToUnderstandPersistenceContext() {//Transaction starts here
+		//Database Operation 1 - Retrieve student
+		Student student = em.find(Student.class, 20001L);
+		
+		//Persistence Context >> student
+		
+		//Database Operation 2 - Retrieve passport
+		Passport passport = student.getPassport();
+		
+		//Persistence Context >> student, passport
+		
+		
+		//Database Operation 3 - Update passport
+		passport.setNumber("E1234567");
+		
+		//Persistence Context >> student, passport-updated
+		
+		
+		//Database Operation 3 - Update student
+		student.setName("SipiB");;
+		
+		//Persistence Context >> student-updated, passport-updated
+	}//Transaction ends here
+	
 	
 
 }
