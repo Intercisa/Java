@@ -18,9 +18,9 @@ insert into student(id, name, passport_id) values(20004, 'Zoli',40004);
 insert into student(id, name, passport_id) values(20005, 'Polom',40003);
 
 
-insert into review(id, rating, description) values(50001, '5', 'Great Course');
-insert into review(id, rating, description) values(50002, '5', 'Great Course');
-insert into review(id, rating, description) values(50003, '4', 'Good Course');
-insert into review(id, rating, description) values(50004, '3', 'Average Course');
-insert into review(id, rating, description) values(50005, '1', 'SHIT');
-insert into review(id, rating, description) values(50006, '2', 'Bad Course');
+insert into review(id, rating, description, course_id) values(50001, '5', 'Great Course',10001);
+insert into review(id, rating, description, course_id) values(50002, '5', 'Great Course',10002);
+insert into review(id, rating, description, course_id) values(50003, '4', 'Good Course',10002);
+insert into review(id, rating, description, course_id) values(50004, '3', 'Average Course',10004);
+insert into review(id, rating, description, course_id) values(50005, '1', 'SHIT',10001);
+insert into review(id, rating, description, course_id) values(50006, '2', 'Bad Course', 10003);

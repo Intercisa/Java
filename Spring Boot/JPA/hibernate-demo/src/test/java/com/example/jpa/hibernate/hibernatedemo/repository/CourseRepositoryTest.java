@@ -4,8 +4,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
@@ -13,13 +18,22 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.example.jpa.hibernate.hibernatedemo.HibernateDemoApplication;
 import com.example.jpa.hibernate.hibernatedemo.entity.Course;
+import com.example.jpa.hibernate.hibernatedemo.entity.Review;
+
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = HibernateDemoApplication.class) //specifying the class we want to launch (use the Application class!!!!)
 class CourseRepositoryTest {
 	
+	private Logger log = 
+			LoggerFactory.getLogger(this.getClass());
+	
+	
 	@Autowired
 	CourseRepository repository;
+	
+	@Autowired
+	EntityManager em;
 	
 	@Test
 	void findById_basic() {
@@ -53,11 +67,23 @@ class CourseRepositoryTest {
 	}
 	
 	@Test
-	@DirtiesContext //after the test automatically reset the data, so the other test won't fail 
 	void playinWithEntityManager() {
 		
 		repository.playingWithEntityManager();
 		
+	}
+	@Test
+	@Transactional
+	void retrieveReviewsForCourse() {
+		Course course = repository.findById(10001L);
+		log.info("reviews ->{}", course.getReviews()); //needs @Transactional
+	}
+	
+	@Test
+	@Transactional
+	void retrieveCourseForReview() {
+		Review review = em.find(Review.class, 50001L); //normally you make a ReviewRepository, it's a shortcut to use em 
+		log.info("Course ->{}", review.getCourse()); //needs @Transactional
 	}
 	
 	

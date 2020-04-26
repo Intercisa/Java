@@ -1,5 +1,7 @@
 package com.example.jpa.hibernate.hibernatedemo.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.jpa.hibernate.hibernatedemo.entity.Course;
+import com.example.jpa.hibernate.hibernatedemo.entity.Review;
 
 @Repository
 @Transactional
@@ -48,6 +51,42 @@ public class CourseRepository {
 
 		Course course2 = findById(10002L);
 		course2.setName("The Trial - updated");
+	}
+
+
+	public void addReviewsForCourse(Long courseId, List<Review> reviews) {
+		Course course = findById(courseId);
+		
+		for (Review review : reviews) {
+			course.addReview(review);
+			review.setCourse(course);
+			em.persist(review);
+		}
+		
+		
+	}
+	
+	
+	//only for practice and debug 
+	public void addReviewsForCourse_hardcodedExample() {
+		//get the course
+		Course course = findById(10003L);
+		log.info("Reviews ->{}" ,course.getReviews());
+		
+		//add 2 reviews to it
+		Review review1 = new Review("4", "Good Course");
+		Review review2 = new Review("5", "Great Course");
+		
+		//setting the relationship
+		course.addReview(review1);
+		review1.setCourse(course);
+		
+		course.addReview(review2);
+		review2.setCourse(course);
+		
+		//save it to the database
+		em.persist(review1);
+		em.persist(review2);
 	}
 	
 	

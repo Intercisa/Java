@@ -38,7 +38,4 @@ public class Student {
 	public String toString() {
 		return String.format("Student [name=%s]", name);
 	}
-	
-	
-
 }
