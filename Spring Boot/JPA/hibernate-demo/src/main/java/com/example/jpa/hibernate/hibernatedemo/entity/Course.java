@@ -55,7 +55,7 @@ public class Course {
 	public void addReview(Review review) {this.reviews.add(review);} //can add only just one review - no real setter method - IMPORTANT! 
 	public void removeReview(Review review) {this.reviews.remove(review);}//removes specific review 
 	public List<Student> getStudents() {return students;}
-	public void addStudents(Student student) {this.students.add(student);}
+	public void addStudent(Student student) {this.students.add(student);}
 	public void removeStudents(Student student) {this.students.remove(student);}
 
 	@Override

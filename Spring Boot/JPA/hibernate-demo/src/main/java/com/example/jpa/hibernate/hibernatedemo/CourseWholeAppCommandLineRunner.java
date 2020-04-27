@@ -1,15 +1,13 @@
 package com.example.jpa.hibernate.hibernatedemo;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.example.jpa.hibernate.hibernatedemo.entity.Review;
+import com.example.jpa.hibernate.hibernatedemo.entity.Course;
+import com.example.jpa.hibernate.hibernatedemo.entity.Student;
 import com.example.jpa.hibernate.hibernatedemo.repository.CourseRepository;
 import com.example.jpa.hibernate.hibernatedemo.repository.StudentRepository;
 
@@ -29,9 +27,10 @@ public class CourseWholeAppCommandLineRunner implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		//studentRepo.saveStudentWithPassport();	
-		List<Review> reviews = Arrays.asList(new Review("5", "Hats up!"), new Review("5", "So good!"));
-		courseRepo.addReviewsForCourse(10004L, reviews);
+		//List<Review> reviews = Arrays.asList(new Review("5", "Hats up!"), new Review("5", "So good!"));
+		//courseRepo.addReviewsForCourse(10004L, reviews);
 		
+		studentRepo.insertStudentAndCourse(new Student("Franz"), new Course("The Idiot Course"));
 		
 	}
 

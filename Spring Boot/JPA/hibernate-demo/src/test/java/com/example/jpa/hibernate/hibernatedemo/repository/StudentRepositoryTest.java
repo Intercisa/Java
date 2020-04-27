@@ -36,7 +36,7 @@ class StudentRepositoryTest {
 	//@Transactional //Persistence Context - without @Transactional all calls have their own transaction 
 	//if just one operation fail - all should fail -> roll back -> that is the importance of @Transactional
 	public void someTest() {
-		repository.someOperationToUnderstandPersistenceContext();
+		//repository.someOperationToUnderstandPersistenceContext();
 	}
 	
 	@Test
@@ -54,6 +54,18 @@ class StudentRepositoryTest {
 		Passport passport = em.find(Passport.class, 40001L);
 		log.info("passport -> {}", passport); 
 		log.info("student -> {}", passport.getStudent()); 
-	 
 	}
+	
+	@Test
+	@Transactional
+	void retrieve_student_and_associatedCourses() {
+		Student student = em.find(Student.class, 20002L);
+		log.info("studnet -> {}", student);
+		log.info("studnet -> {}", student.getCourses());
+	}
+	
+	
+	
+	
+	
 }

@@ -68,10 +68,9 @@ class CourseRepositoryTest {
 	
 	@Test
 	void playinWithEntityManager() {
-		
-		repository.playingWithEntityManager();
-		
+		//repository.playingWithEntityManager();
 	}
+	
 	@Test
 	@Transactional
 	void retrieveReviewsForCourse() {

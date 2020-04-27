@@ -6,6 +6,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.jpa.hibernate.hibernatedemo.entity.Course;
 import com.example.jpa.hibernate.hibernatedemo.entity.Passport;
 import com.example.jpa.hibernate.hibernatedemo.entity.Student;
 
@@ -72,6 +73,30 @@ public class StudentRepository {
 		
 		//Persistence Context >> student-updated, passport-updated
 	}//Transaction ends here
+	
+	//for example 
+	public void insertStudentAndCourseHardcoded() {
+		Student student = new Student("Franz");
+		Course course = new Course("The Idiot Course");
+		
+		em.persist(student); 
+		em.persist(course);
+		
+		student.addCourse(course);
+		course.addStudent(student);
+		
+		em.persist(student); //persist the owning side 
+	}
+	
+	
+	public void insertStudentAndCourse(Student student, Course course) {
+		
+		student.addCourse(course);
+		course.addStudent(student);
+		
+		em.persist(student); //first persist the owner 
+		em.persist(course);
+	}
 	
 	
 
