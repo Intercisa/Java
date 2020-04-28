@@ -49,6 +49,25 @@ JPQL Entities <- difference -> SQL Tables
 	
 	
 //////////////////////////////////////////
+TRANSACTION MANAGEMENT: 
 
+	ACID >>
+		A : Atomicity >> all transaction should be successful or none of them 
+		
+		C : Consistency >> any transaction should leave the whole system in a consistent state 
+		
+		I : Isolation >> the intermediate state of a transaction is invisible to other transactions as a result, 
+			transactions that run concurrently appear to be serialized
+			
+		D : Durability >> after a transaction successfully completes, changes to data persist and are not undone, 
+			even in the event of a system failure
+			
+			
+	Dirty Read
+	
+	Non Repeatable Read 
+	
+	Phantom Read
+		
 	
 	
