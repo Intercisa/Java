@@ -2,13 +2,14 @@ insert into course(id, name, created_date, last_updated_date) values(10001, 'The
 insert into course(id, name, created_date, last_updated_date) values(10002, 'The Trial Course',sysdate(), sysdate());
 insert into course(id, name, created_date, last_updated_date) values(10003, 'Amerika Course',sysdate(), sysdate());
 insert into course(id, name, created_date, last_updated_date) values(10004, 'The Metamorphosis Course',sysdate(), sysdate());
+insert into course(id, name, created_date, last_updated_date) values(10005, 'The Catcher in the Rye',sysdate(), sysdate());
 
 
-insert into passport(id, number) values(40001, 'E134556');
-insert into passport(id, number) values(40002, 'L133256');
-insert into passport(id, number) values(40003, 'N329456');
-insert into passport(id, number) values(40004, 'E933162');
-insert into passport(id, number) values(40005, 'R145685');
+insert into passport(id, number) values(40001, 'E123456');
+insert into passport(id, number) values(40002, 'L123456');
+insert into passport(id, number) values(40003, 'N213456');
+insert into passport(id, number) values(40004, 'E12342');
+insert into passport(id, number) values(40005, 'R132485');
 
 
 insert into student(id, name, passport_id) values(20001, 'Sipi',40002);
