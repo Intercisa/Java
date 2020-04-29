@@ -63,11 +63,24 @@ TRANSACTION MANAGEMENT:
 			even in the event of a system failure
 			
 			
-	Dirty Read
-	
-	Non Repeatable Read 
-	
-	Phantom Read
+					Dirty Read		Non Repeatable Read 	Phantom Read
+					
+Read Uncommitted	Possible		Possible				Possible
+Read Committed		Solved			Possible				Possible
+Repeatable Read		Solved			Solved					Possible		
+Serializable		Solved			Solved					Solved			>> bad performance >> each transaction have to wait 
+
 		
+		
+		TRANSACTIONAL WHICH ONE?! 
+	 javax.transaction.Transactional  || org.springframework.transaction.annotation.Transactional
+
+	if you have to manage transactions across multiple databases/queues etc. USE >> org.springframework.transaction.annotation.Transactional
+		and with spring transaction you can modify the Isolation level >> @Transactional(isolation = Isolation.REPEATABLE_READ)
 	
+	if you only have 1 database use >> javax.transaction.Transactional 
+
+		
+	also us can set the isolation level across the app in application.properties
+			spring.jpa.properties.hibernate.connection.isolation=2
 	

@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 //@Table(name = "CourseDetails")  //use if the table have a different name than the entity or you want that 
 @NamedQueries(
@@ -37,6 +39,7 @@ public class Course {
 	private List<Review> reviews = new ArrayList<>();
 	
 	@ManyToMany(mappedBy = "courses")  //dosen't matter which side is the owning side 
+	@JsonIgnore
 	private List<Student> students = new ArrayList<>();
 	
 	@UpdateTimestamp //hibernate annotations - no need for getter/setter
