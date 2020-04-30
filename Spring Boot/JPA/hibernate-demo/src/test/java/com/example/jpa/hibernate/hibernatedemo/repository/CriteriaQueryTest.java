@@ -30,7 +30,7 @@ class CriteriaQueryTest {
 			LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	EntityManager em;
+	private EntityManager em;
 	
 	@Test
 	void select_all_courses_criteriaquery_basic() {

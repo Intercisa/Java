@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -23,6 +24,9 @@ public class Student {
 	
 	@Column(nullable = false)
 	private String name;
+	
+	@Embedded //just embed this in students table 
+	private Address address;
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	private Passport passport; //Student is the owning side of the relationship 
@@ -48,6 +52,8 @@ public class Student {
 	public List<Course> getCourses() {return courses;}
 	public void addCourse(Course course) {this.courses.add(course);}
 	public void removeCourse(Course course) {this.courses.remove(course);}
+	public Address getAddress() {return address;}
+	public void setAddress(Address address) {this.address = address;}
 
 	@Override
 	public String toString() {

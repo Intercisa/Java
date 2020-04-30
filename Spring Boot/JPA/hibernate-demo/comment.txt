@@ -13,10 +13,6 @@ JPQL Entities <- difference -> SQL Tables
 	SELECT c  FROM Course c		-	SELECT * FROM COURSE 
 
 	
-	
-	
-	
-	
 ///////////////////////////////////////////	
 	
 	public void playingWithEntityManager() {
@@ -83,4 +79,33 @@ Serializable		Solved			Solved					Solved			>> bad performance >> each transactio
 		
 	also us can set the isolation level across the app in application.properties
 			spring.jpa.properties.hibernate.connection.isolation=2
+			
+/////////////////////////////////////////////////////////
+
+Caching:
+	Hibernate: 
+		Persistence Context >> First Level Caching >> Second Level Caching >> Database		
+		
+		
+		Second Level Caching:
+		-------------------------------------------------------------------------- 
+			Transaction1 		|	Transaction2 		|	Tansaction3 			>> running in parallel 
+		-------------------------------------------------------------------------- 		
+			PersistenceContext1	|	PersistanceContext2	|	PersistenceContext3
+			First Level Cache	|	First Level Cache	|	First Level Cache
+		--------------------------------------------------------------------------		
+								SECOND LEVEL CACHE									>> needs configuration >> you need to tell hibernate which data won't change 
+		--------------------------------------------------------------------------		
+									DATABASE
+			
+			
+	Second Level Cache: 
+		pom.xml >> dependency -> Ehcache 
+			enable and specify second level cache in application.properties! && in the Class	
+			
+			
+/////////////////////////////////////////////////////////
+
+Soft delete -> keeping the history of the deleted rows 
+			
 	

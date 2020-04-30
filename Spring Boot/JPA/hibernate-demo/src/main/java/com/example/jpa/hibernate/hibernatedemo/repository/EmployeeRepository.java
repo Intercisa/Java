@@ -22,7 +22,7 @@ public class EmployeeRepository {
 			LoggerFactory.getLogger(this.getClass());
 	
 	@PersistenceContext
-	EntityManager em;
+	private EntityManager em;
 	
 	
 	public void insert(Employee employee) {

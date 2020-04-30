@@ -1,6 +1,8 @@
 package com.example.jpa.hibernate.hibernatedemo.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,7 +15,8 @@ public class Review { //one side of the OneToMany relationship - owner side
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private String rating;
+	@Enumerated(EnumType.STRING)   //default -> ordinal >> numeric representation 1,2,3... >> ordinal can change if you add new >> better using EnumType.STRING
+	private ReviewRating rating;
 
 	private String description;
 	
@@ -22,7 +25,7 @@ public class Review { //one side of the OneToMany relationship - owner side
 	
 	protected Review() {}
 	
-	public Review(String rating, String description) {
+	public Review(ReviewRating rating, String description) {
 		super();
 		this.rating = rating;
 		this.description = description;
@@ -31,8 +34,8 @@ public class Review { //one side of the OneToMany relationship - owner side
 	public String getDescription() {return description;}
 	public void setDescription(String description) {this.description = description;}
 	public Long getId() {return id;}
-	public String getRating() {return rating;}
-	public void setRating(String rating) {this.rating = rating;}
+	public ReviewRating getRating() {return rating;}
+	public void setRating(ReviewRating rating) {this.rating = rating;}
 	public Course getCourse() {return course;}
 	public void setCourse(Course course) {this.course = course;}
 	

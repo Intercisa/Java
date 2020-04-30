@@ -29,11 +29,11 @@ class NativeQueriesTest {
 	//so you need to refresh them is you have them directly in the persistence context, to make them uptodate 
 	
 	@Autowired
-	EntityManager em;
+	private EntityManager em;
 	
 	@Test
-	void native_queries_basic() {
-		Query createQuery = em.createNativeQuery("SELECT * FROM COURSE", Course.class); 
+	void native_queries_basic() { //the @Where(clause = "is_deleted = false") is not applied to native queries!!!! need to add manually 
+		Query createQuery = em.createNativeQuery("SELECT * FROM COURSE WHERE is_deleted=0", Course.class); //0 is false 
 		List<Course> resultList = createQuery.getResultList();
 		log.info("SELECT * FROM COURSE -> {}", resultList);
 	}

@@ -32,7 +32,7 @@ class CourseSpringDataRepositoryTest {
 	
 	
 	@Autowired
-	CourseSpringDataRepository repository;
+	private CourseSpringDataRepository repository;
 	
 	
 	@Test

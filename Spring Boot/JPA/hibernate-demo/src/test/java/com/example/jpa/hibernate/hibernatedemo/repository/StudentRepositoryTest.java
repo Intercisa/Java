@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.example.jpa.hibernate.hibernatedemo.HibernateDemoApplication;
+import com.example.jpa.hibernate.hibernatedemo.entity.Address;
 import com.example.jpa.hibernate.hibernatedemo.entity.Passport;
 import com.example.jpa.hibernate.hibernatedemo.entity.Student;
 
@@ -23,10 +24,7 @@ class StudentRepositoryTest {
 			LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	EntityManager em;
-	
-	@Autowired
-	StudentRepository repository;
+	private EntityManager em;
 	
 	//Session & Session Factory
 	//EntityManager & Persistence Context
@@ -64,7 +62,14 @@ class StudentRepositoryTest {
 		log.info("studnet -> {}", student.getCourses());
 	}
 	
-	
+	@Test
+	@Transactional
+	void set_address_details_for_student() {
+		Student student = em.find(Student.class, 20001L);
+		student.setAddress(new Address("No 120", "New Street", "Budapest"));
+		em.flush();
+		log.info("studnet -> {}", student); 
+	}
 	
 	
 	

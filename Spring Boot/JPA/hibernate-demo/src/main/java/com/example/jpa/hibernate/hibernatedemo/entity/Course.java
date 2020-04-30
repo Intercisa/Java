@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,9 +14,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.Where;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -23,11 +27,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 //@Table(name = "CourseDetails")  //use if the table have a different name than the entity or you want that 
 @NamedQueries(
 		value = {@NamedQuery(name = "query_get_all_courses", query = "SELECT c  FROM Course c"),
+				@NamedQuery(name = "query_get_all_courses_with_join_fetch", query = "SELECT c  FROM Course c JOIN FETCH c.students s"), //solving N+1 problem with join fetch
 				@NamedQuery(name = "query_select_Trial", query = "SELECT c  FROM Course c where name like '%Trial'")})
 
-
+@Cacheable //adding second level cache 
+@SQLDelete(sql = "update course set is_deleted=true where id=?") //soft delete configuration
+@Where(clause = "is_deleted = false") //only retrieve those where isDeleted == false || part of soft delete configuration || not applied to native queries!! >> need to add manually 
 public class Course {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -47,6 +54,13 @@ public class Course {
 	
 	@CreationTimestamp //hibernate annotations - no need for getter/setter
 	private LocalDateTime createdDate;
+	
+	private boolean isDeleted; //for soft delete 
+	
+	@PreRemove //called before the row of the specific entity gets deleted || lifecycle method, there are more 
+	private void preRemove() {
+		isDeleted = true; //needed because hibernate otherwise don't know if it was deleted or not -> coz' soft delete 
+	}
 	
 	protected Course() {}
 

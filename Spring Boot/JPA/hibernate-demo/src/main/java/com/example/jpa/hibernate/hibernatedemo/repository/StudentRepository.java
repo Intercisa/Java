@@ -16,7 +16,7 @@ public class StudentRepository {
 	
 	
 	@PersistenceContext
-	EntityManager em;
+	private EntityManager em;
 	
 	public Student findById(Long id) {
 		return em.find(Student.class, id);

@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.jpa.hibernate.hibernatedemo.entity.Course;
 import com.example.jpa.hibernate.hibernatedemo.entity.Review;
+import com.example.jpa.hibernate.hibernatedemo.entity.ReviewRating;
 
 @Repository
 @Transactional
@@ -21,7 +22,7 @@ public class CourseRepository {
 			LoggerFactory.getLogger(this.getClass());
 	
 	@PersistenceContext
-	EntityManager em;
+	private EntityManager em;
 	
 	public Course findById(Long id) {
 		return em.find(Course.class, id);
@@ -74,8 +75,8 @@ public class CourseRepository {
 		log.info("Reviews ->{}" ,course.getReviews());
 		
 		//add 2 reviews to it
-		Review review1 = new Review("4", "Good Course");
-		Review review2 = new Review("5", "Great Course");
+		Review review1 = new Review(ReviewRating.FOUR, "Good Course");
+		Review review2 = new Review(ReviewRating.FIVE, "Great Course");
 		
 		//setting the relationship
 		course.addReview(review1);

@@ -30,10 +30,10 @@ class CourseRepositoryTest {
 	
 	
 	@Autowired
-	CourseRepository repository;
+	private CourseRepository repository;
 	
 	@Autowired
-	EntityManager em;
+	private EntityManager em;
 	
 	@Test
 	void findById_basic() {
@@ -85,7 +85,20 @@ class CourseRepositoryTest {
 		log.info("Course ->{}", review.getCourse()); //needs @Transactional
 	}
 	
-	
+	//caching
+	@Test
+	@Transactional
+	void findById_basic_first_cache() {
+		Course course = repository.findById(10001L);
+		log.info("First Course Retrieved ->{}", course);
+		
+		Course course2 = repository.findById(10001L); //comes from the first level cache because of the transaction context >> @Transactional - they are in the same transaction
+		//without @Transactional -> two separate query fired 
+		log.info("Second Course Retrieved again->{}", course2);
+		
+		assertEquals("The Castle Course", course.getName());
+		assertEquals("The Castle Course", course2.getName());
+	}
 	
 	
 }
