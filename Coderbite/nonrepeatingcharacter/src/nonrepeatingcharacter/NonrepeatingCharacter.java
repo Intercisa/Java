@@ -17,7 +17,7 @@ public class NonrepeatingCharacter {
 					return String.valueOf(c);
 			}
   	        
-	        return "no repetations";
+	        return "there is no single letter";
 		  }
 	
 	
