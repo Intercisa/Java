@@ -1,5 +1,8 @@
 package firstbadversion;
 
+/* The isBadVersion API is defined in the parent class VersionControl.
+boolean isBadVersion(int version); */
+
 public class FirstBadVersion {
 	
 	 public int firstBadVersion(int n) {
@@ -17,6 +20,7 @@ public class FirstBadVersion {
 		 }
 		 return end;
 	 }
+	 
 	private boolean isBadVersion(int version) {
 		 return version >= 2;
 	 }

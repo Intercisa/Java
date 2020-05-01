@@ -10,12 +10,23 @@ import firstbadversion.FirstBadVersion;
  * which causes all the following ones to be bad.
  *You are given an API bool isBadVersion(version) which will return whether version is bad. 
  *Implement a function to find the first bad version. You should minimize the number of calls to the API.
+ *
+ *
+ *Given n = 5, and version = 4 is the first bad version.
+ *	call isBadVersion(3) -> false
+ *	call isBadVersion(5) -> true
+ *	call isBadVersion(4) -> true
+ *Then 4 is the first bad version. 
+ *
+ *
+ *just use binary search 
+ *
+ *
  */
 
 public class Main {
 
 	public static void main(String[] args) {
 		FirstBadVersion badVersion = new FirstBadVersion();
-		System.out.println(badVersion.firstBadVersion(2));
 	}
 }
