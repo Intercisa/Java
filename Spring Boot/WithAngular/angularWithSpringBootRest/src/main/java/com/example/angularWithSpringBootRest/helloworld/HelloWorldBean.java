@@ -1,4 +1,4 @@
-package com.example.angularWithSpringBootRest.helloworld.bean;
+package com.example.angularWithSpringBootRest.helloworld;
 
 
 public class HelloWorldBean {
