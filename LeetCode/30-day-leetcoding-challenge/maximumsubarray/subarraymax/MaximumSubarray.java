@@ -1,8 +1,21 @@
 package subarraymax;
 
-//faster approach
+//faster approach - only works if there is not only negative numbers
 public class MaximumSubarray {
-	  public int maxSubArray(int[] nums) {
+	 //best
+	 public int maxSubArray(int[] nums) {
+	 	int maxRes = nums[0], currMax = nums[0];
+	
+		for (int i = 0; i < nums.length; i++) {
+			currMax = Math.max(nums[i], currMax+nums[i]);
+		
+			if(currMax > maxRes)
+			maxRes = currMax;
+	}
+	return maxRes;
+	}
+	
+	  public int maxSubArrayFast(int[] nums) {
 	      int n = nums.length;
 	      int maxRes = Integer.MIN_VALUE;
 	      int maxNow = 0;
@@ -10,20 +23,15 @@ public class MaximumSubarray {
 		  for (int i = 0; i < n; i++) {
 			  maxNow+=nums[i];
 			  
-			  //for debug 
-			  System.out.println("maxEnding:" + maxNow);
-			  
 			  if(maxRes < maxNow)
 				  maxRes = maxNow;
 			  if(maxNow < 0)
 				  maxNow = 0;
 		  }
-		  
 		  return maxRes;
-		  
-	    }
+	  }
 	  
-	  
+	  //only works if there is not only negative numbers
 	  public int maxSubArrayDifferent(int[] nums) {
 		  
 	       int maxSum = nums[0];
