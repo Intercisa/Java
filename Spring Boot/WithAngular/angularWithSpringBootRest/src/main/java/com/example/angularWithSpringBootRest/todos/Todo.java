@@ -2,9 +2,16 @@ package com.example.angularWithSpringBootRest.todos;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Todo {
+	@Id
+	@GeneratedValue
+	private Long id;
 	
-	private long id;
 	private String username;
 	private String description;
 	private boolean isDone;
@@ -12,7 +19,7 @@ public class Todo {
 
 	protected Todo() {}
 	
-	public Todo(long id, String username, String description, boolean isDone, Date targetDate) {
+	public Todo(Long id, String username, String description, boolean isDone, Date targetDate) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -22,7 +29,7 @@ public class Todo {
 	}
 
 	public long getId() {return id;}
-	public void setId(long id) {this.id = id;}
+	public void setId(Long id) {this.id = id;}
 	public String getUsername() {return username;}
 	public void setUsername(String username) {this.username = username;}
 	public String getDescription() {return description;}

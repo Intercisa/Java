@@ -1,4 +1,4 @@
-package com.example.angularWithSpringBootRest.basic.auth;
+package com.example.basic.auth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

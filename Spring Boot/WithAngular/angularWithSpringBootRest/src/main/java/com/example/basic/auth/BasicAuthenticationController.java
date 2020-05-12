@@ -1,4 +1,4 @@
-package com.example.angularWithSpringBootRest.basic.auth;
+package com.example.basic.auth;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
