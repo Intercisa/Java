@@ -1,0 +1,70 @@
+https://leetcode.com/explore/challenge/card/may-leetcoding-challenge/537/week-4-may-22nd-may-28th/3342/discuss/159224/Java-Solution:-DFS-using-Set-(Very-Easy-to-understand)
+
+Approach
+
+Bipartition is the term associated with graph. So, lets solve this problem using graph traversal algorithms.
+
+    Create a graph with N nodes (1,2,3.. N)
+    Dislikes is an arry which contain group of people who are not willing to be part of same team. dislikes[i] will contain 2 nodes(source,target) who dont' like each other company. If x doesn't like y then y also doesn't like x. Which indicates we need to create an undirected graph.
+    Iterate of dislikes array add 2 edges to graph.
+        One from Source(dislikes[i][0]) to Target(dislikes[i][1])
+        Another from Target(dislikes[i][1]) to Source(dislikes[i][0]
+    Create an another integer array called colors. Used for bipartition. If a person x doesn't like y, then x will go to Green team and y will go to Red team.
+        We can create integer/short/byte array. On tight memory constraint we can use byte[], as we only need 3 values.
+            Uncolored nodes(-1)
+            Green Nodes(1)
+            Red Nodes(2)
+    Now traverse the graph using any of the graph traversal algorithms(DFS/BFS). If at any point in time we find a case where one of the Green team member needs to be moved to Red or vice versa, then it's not possible to partition nodes into 2 groups. So, return false. Otherwise return true.
+    Java code using dfs is given below. (46 ms) Probably we can improve time 46 ms to few ms lower, but if you are practicing this for interview pay attention to (on white board coding following matters, than getting to run few ms faster)
+        Readability of the code.
+        Clarity of the graph traversal concept
+        Clarity on the data structure used.
+        Correctness of the solution.(Most important).
+        Time/Space Complexity of the code.
+
+        
+        Code
+
+    public boolean possibleBipartition(int N, int[][] dislikes) {
+        // HashSet used as adjacencySet dataStructure for Graph.  If duplicate nodes are allowed then use List.
+	Set<Integer>[] graph = new HashSet[N+1] ;
+	// Vertex 0 has no data in this graph as per problem statement.  So, start at 1.	
+        for (int i = 1 ; i <= N ; ++ i) {
+	// Initialize HashSet
+            graph[i] = new HashSet<>() ;
+        }
+
+        for (int i = 0 ; i < dislikes.length ; ++ i) {
+            int source = dislikes[i][0], target = dislikes[i][1] ;
+	// Add edges in both direction to create undirected graph
+            graph[source].add(target) ;
+            graph[target].add(source) ;
+        }
+
+        int colors[] = new int[N+1] ;
+	// Initially no one belongs to any group.  So, initialize every node to -1.
+	Arrays.fill(colors, -1) ;
+        for (int v = 1 ; v < graph.length ; ++ v) {
+	// Start dfs only if current node is not part of any group.  If node is not assigned to group and dfs returns false then it's not possible to bi-partition this graph.  So, answer is false.
+            if (colors[v] == -1 &&  !dfs (graph, v, colors, 0))
+            return false ;
+        }
+	// if we are able to visit all nodes then answer is yes.  We are able to split the nodes into 2 different groups.
+        return true ;
+    }
+	// DFS returns true only 2 conditions.
+	//  1.  We reached all nodes from the current source vertex - s
+	//  2.  We reached the already visited and that belongs the the same team we expect.
+    boolean dfs(Set<Integer>[] graph, int s, int[] colors, int color) {
+        if (colors[s] != -1) {
+            return colors[s] == color ;
+        }
+        colors[s] = color ;
+        for (int w : graph[s]) {
+            if (!dfs(graph, w, colors, 1 - color))
+                return false ;
+        }
+        return true ;
+    }
+        
+        
