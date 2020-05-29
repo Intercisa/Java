@@ -3,8 +3,7 @@ package countingbits;
 public class CountingBits {
 
 	 private int[] recursiveResult; //array for the recursive solution
-	 
-	 
+
 	 //iterative DP solution
 	 public int[] countBits(int num) {
 	
