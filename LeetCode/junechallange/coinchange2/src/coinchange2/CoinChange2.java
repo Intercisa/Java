@@ -6,18 +6,35 @@ public class CoinChange2 {
 	
 	//dp second	 - only one dimension
 	public int change(int amount, int[] coins) {
-
-        int dp[] = new int[amount+1];
-        Arrays.fill(dp, 0);
-        dp[0] = 1;
-        
-        for(int coin:coins){
-            for(int j = coin; j<=amount; j++){
-            dp[j] += dp[j - coin];
-            }
-        }
-            return dp[amount];
+	        int dp[] = new int[amount+1];
+	        Arrays.fill(dp, 0);
+	        dp[0] = 1;
+	        
+	        for(int coin:coins){
+	           for(int j = coin; j<=amount; j++){
+	        	   dp[j] += dp[j - coin];
+	            }
+	        }
+	        return dp[amount];
     }
+	
+	
+	//or
+	
+	public int changeOneDimTwo(int amount, int[] coins) {
+		int dp[] = new int[amount + 1];
+		dp[0] = 1;
+		
+		for (int coin : coins) {
+			for (int i = 1; i < dp.length; i++) {
+				if(i >= coin)
+					dp[i] += dp[i - coin]; 
+			}
+		}
+		
+		return dp[amount];
+	}
+	
 	
 	//dp first
 	public int change2(int amount, int[] coins) {
