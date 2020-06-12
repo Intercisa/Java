@@ -7,13 +7,13 @@ import java.util.Random;
 public class RandomizedSet {
 
 	ArrayList<Integer> _values;
-	HashMap<Integer, Integer> _locations;
+	HashMap<Integer, Integer> _locationHash;
 	private Random rand;
 
 	/** Initialize your data structure here. */
 	public RandomizedSet() {
 		_values = new ArrayList<Integer>();
-		_locations = new HashMap<Integer, Integer>();
+		_locationHash = new HashMap<Integer, Integer>();
 		rand = new Random();
 	}
 
@@ -22,10 +22,10 @@ public class RandomizedSet {
 	 * the specified element.
 	 */
 	public boolean insert(int val) {
-		boolean contain = _locations.containsKey(val);
+		boolean contain = _locationHash.containsKey(val);
         if (contain) return false;
         
-        _locations.put(val, _values.size());
+        _locationHash.put(val, _values.size());
         _values.add(val);
         return true;
 	}
@@ -36,15 +36,15 @@ public class RandomizedSet {
 	 */
 	public boolean remove(int val) {
 		
-		if(!_locations.containsKey(val)) return false;
+		if(!_locationHash.containsKey(val)) return false;
          
-        int loc = _locations.get(val);
+        int loc = _locationHash.get(val);
         if (loc < _values.size() - 1 ) { // not the last one than swap the last one with this val
             int lastone = _values.get(_values.size() - 1);
             _values.set(loc, lastone);
-            _locations.put(lastone, loc);
+            _locationHash.put(lastone, loc);
         }
-        _locations.remove(val);
+        _locationHash.remove(val);
         _values.remove(_values.size() - 1);
         return true;
 		
