@@ -1,4 +1,4 @@
-package CommandQuerySeparation;
+package commandqueryseparation;
 
 public class IncreasedDefenseModifier extends CreatureModifier{
 

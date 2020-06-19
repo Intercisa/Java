@@ -1,4 +1,4 @@
-package CommandQuerySeparation;
+package commandqueryseparation;
 
 import java.util.HashMap;
 import java.util.Map;
