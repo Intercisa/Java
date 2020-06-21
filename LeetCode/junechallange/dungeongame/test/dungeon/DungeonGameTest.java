@@ -1,0 +1,6 @@
+package dungeon;
+
+class DungeonGameTest {
+
+
+}
