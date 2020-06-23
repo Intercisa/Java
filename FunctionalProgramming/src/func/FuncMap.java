@@ -2,7 +2,7 @@ package func;
 
 import java.util.List;
 
-public class Func02Map {
+public class FuncMap {
 	public static void main(String[] args) {
 		List<Integer> list = List.of(12,9,13,4,6,2,4,12,15);
 	

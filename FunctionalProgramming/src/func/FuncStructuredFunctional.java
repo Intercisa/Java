@@ -2,7 +2,7 @@ package func;
 
 import java.util.List;
 
-public class Func01StructuredFunctional {
+public class FuncStructuredFunctional {
 
 	public static void main(String[] args) {
 		List<Integer> list = List.of(12,9,13,4,6,2,4,12,15);
@@ -34,7 +34,7 @@ public class Func01StructuredFunctional {
 		
 		//with stream
 		nums.stream()
-		.forEach(Func01StructuredFunctional::print);
+		.forEach(FuncStructuredFunctional::print);
 		
 		//without stream
 		//nums.forEach(System.out::println);
@@ -49,7 +49,7 @@ public class Func01StructuredFunctional {
 		
 		//even nums
 		nums.stream()
-		.filter(Func01StructuredFunctional::isEven)
+		.filter(FuncStructuredFunctional::isEven)
 		.forEach(System.out::println);
 		
 		//or
