@@ -8,16 +8,13 @@ public class FuncDistinctSorted {
 		List<Integer> list = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
 		List<String> courses = List.of("Spring", "Spring boot", "API", "Microservices", "AWS", "PCF",
 				"Azure", "Docker", "Kubernetes");
-		
-		
+
 			distinct(list);
 			sorted(list);
 			sortedDesc(list);
 			sortedDistinct(list);
 			
 			sorted(courses);
-			
-		
 			
 	}
 
