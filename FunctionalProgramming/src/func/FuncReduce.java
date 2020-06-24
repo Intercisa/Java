@@ -6,6 +6,7 @@ public class FuncReduce {
 	public static void main(String[] args) {
 		List<Integer> list = List.of(12,9,13,4,6,2,4,12,15);
 		
+		
 		System.out.println(sumNumStruct(list));
 		System.out.println(sumNumFuncWithMethod(list));
 		System.out.println(sumNumFunc(list));
