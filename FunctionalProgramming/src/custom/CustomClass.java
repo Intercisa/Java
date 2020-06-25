@@ -243,6 +243,16 @@ public class CustomClass {
 								Course::getCategory, 
 								Collectors.mapping(Course::getName, Collectors.toList()))));
 		
+		//HIGHER ORDER FUNCTIONS!
 		
+		Predicate<? super Course> reviewScoreGreaterThan95Predicate2 = createPredicateWithCutOfReviewScore(95);
+		Predicate<? super Course> reviewScoreGreaterThan90Predicate2 = createPredicateWithCutOfReviewScore(90);
+		
+		
+		
+	}
+
+	private static Predicate<? super Course> createPredicateWithCutOfReviewScore(int cutOffReviewScore) {
+		return c -> c.getReviewScore() > cutOffReviewScore;
 	}
 }
