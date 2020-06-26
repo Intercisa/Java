@@ -24,8 +24,7 @@ public class ThreadsWithStreams {
 		Thread thread3 = new Thread(runnable);
 		// thread3.start();
 		
-		
-
+	
 		// functional
 		Runnable runnableFunc = () -> {
 			
