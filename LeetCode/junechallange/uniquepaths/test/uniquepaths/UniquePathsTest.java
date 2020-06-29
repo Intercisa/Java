@@ -15,4 +15,8 @@ class UniquePathsTest {
 	void test_2() {
 		assertEquals(28, new UniquePaths().uniquePaths(7, 3));
 	}
+	
+	@Test
+	void test_3() {
+	}
 }
