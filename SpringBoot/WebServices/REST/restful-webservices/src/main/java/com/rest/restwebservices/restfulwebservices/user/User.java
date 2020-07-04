@@ -2,11 +2,18 @@ package com.rest.restwebservices.restfulwebservices.user;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 
 public class User {
 	
 	private Long id;
+	
+	@Size(min = 2, message = "must be more than 2 char long")
 	private String name;
+	
+	@Past
 	private Date birthDate;
 	
 	protected User() {}

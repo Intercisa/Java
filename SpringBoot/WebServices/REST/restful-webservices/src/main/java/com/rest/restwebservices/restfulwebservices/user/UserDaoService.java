@@ -2,6 +2,7 @@ package com.rest.restwebservices.restfulwebservices.user;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -35,7 +36,26 @@ public class UserDaoService {
 		return users.stream()
 				.filter(u -> u.getId() == id)
 				.findFirst()
-				.get();
+				.orElseThrow(() -> new UserNotFoundException("id-"+ id));
+	}
+	
+	
+	public User deleteByUser(Long id) {
+//		return users.remove(
+//				users.stream()
+//		.filter(u -> u.getId() == id)
+//		.findFirst()
+//		.orElse(null));
+		
+		Iterator<User> iterator = users.iterator();
+		while (iterator.hasNext()) {
+			User user = iterator.next();
+			if(user.getId() == id) {
+				iterator.remove();
+				return user;
+			}
+		}
+		return null;
 	}
 
 	private Long setUserId() {
