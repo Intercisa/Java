@@ -10,3 +10,8 @@ insert into post values(3,'Learn Spring', 4);
 insert into post values(4,'Learn Docker', 3);
 insert into post values(5,'Learn Microservices', 1);
 insert into post values(6,'Learn Angular', 2);
+
+
+insert into student values(1, 15,'Big','Benny','Hampton School');
+insert into student values(2, 16,'Small','Jenny','Hampton School');
+insert into student values(3, 11,'Average','Sunny','New School');

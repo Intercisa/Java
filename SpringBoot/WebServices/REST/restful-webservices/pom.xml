@@ -47,6 +47,15 @@
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
 
+		<!-- lombok  -->
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+
 
 		<dependency>
 			<groupId>io.springfox</groupId>
