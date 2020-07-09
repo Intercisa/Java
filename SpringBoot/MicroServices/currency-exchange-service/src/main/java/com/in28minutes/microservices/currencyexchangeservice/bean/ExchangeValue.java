@@ -1,4 +1,4 @@
-package com.in28minutes.microservices.currencyexchangeservice.controller.bean;
+package com.in28minutes.microservices.currencyexchangeservice.bean;
 
 import java.math.BigDecimal;
 

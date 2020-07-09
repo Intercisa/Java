@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.in28minutes.microservices.currencyexchangeservice.controller.bean.ExchangeValue;
+import com.in28minutes.microservices.currencyexchangeservice.bean.ExchangeValue;
 import com.in28minutes.microservices.currencyexchangeservice.repo.ExchangeValueRepository;
 
 @RestController

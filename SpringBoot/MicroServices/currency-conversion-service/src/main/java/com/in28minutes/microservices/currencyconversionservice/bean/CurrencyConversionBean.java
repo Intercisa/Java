@@ -1,4 +1,4 @@
-package com.in28minutes.microservices.currencyconversionservice.controller.bean;
+package com.in28minutes.microservices.currencyconversionservice.bean;
 
 import java.math.BigDecimal;
 
@@ -12,7 +12,7 @@ public class CurrencyConversionBean {
 	private BigDecimal totalCalculatedAmount;
 	private int port;
 	
-	protected CurrencyConversionBean() {};
+	public CurrencyConversionBean() {};
 	
 	public CurrencyConversionBean(Long id, String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
 			BigDecimal totalCalculatedAmount, int port) {
