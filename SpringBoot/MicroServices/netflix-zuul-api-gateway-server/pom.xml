@@ -10,16 +10,15 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
-	<artifactId>currency-conversion-service</artifactId>
+	<artifactId>netflix-zuul-api-gateway-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>currency-conversion-service</name>
-	<description>currency conversion service</description>
+	<name>netflix-zuul-api-gateway-server</name>
+	<description>Demo project for Spring Boot</description>
 
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>Hoxton.SR6</spring-cloud.version>
 	</properties>
-
 
 	<dependencies>
 		<dependency>
@@ -27,38 +26,18 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>com.fasterxml.jackson.dataformat</groupId>
-					<artifactId>jackson-dataformat-xml</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<dependency>

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,7 @@ import com.in28minutes.microservices.currencyconversionservice.proxy.CurrencyExc
 
 @RestController
 public class CurrencyConversionController {
+	private Logger logger = org.slf4j.LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private CurrencyExchangeServiceProxy proxy;
@@ -34,7 +36,7 @@ public class CurrencyConversionController {
 		
 		ResponseEntity<CurrencyConversionBean> responseEntity 
 						= new RestTemplate().getForEntity(
-								"http://localhost:8000/currency-exchange/from/{from}/to/{to}",
+								"http://localhost:8000/currency-exchange/from/{from}/to/{to}", //hardcoded port -> don't use this url
 								CurrencyConversionBean.class,
 								uriVariables);
 		
@@ -56,6 +58,8 @@ public class CurrencyConversionController {
 		
 		CurrencyConversionBean response = proxy.retrieveExchangeValue(from, to);
 
+		logger.info("LOG {}", response);
+		
 		return new CurrencyConversionBean(response.getId(),
 													from,
 													to,
