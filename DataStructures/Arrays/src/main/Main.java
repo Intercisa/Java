@@ -63,6 +63,12 @@ package main;
  *
  * insertion sort is an unstable algorithm
  * 
+ * merge sort is a stable algorithm
+ * 
+ * quick sort is an unstable algorithm 
+ * 
+ * radix sort is a stable algorithm
+ * 
  * 
  * 
  */

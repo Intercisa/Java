@@ -25,5 +25,10 @@ public class Util {
 		System.out.println("Arr: ");
 		for (int i : dummyArr) System.out.print(i + " ");
 	}
+	
+	public static void printArr(String[] dummyArr) {
+		System.out.println("Arr: ");
+		for (String i : dummyArr) System.out.print(i + " ");
+	}
 
 }
