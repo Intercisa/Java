@@ -1,14 +1,16 @@
-package main;
+package list;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
+import bean.Emplyee;
+
 /*
  * 
  */
 
-public class Main {
+public class ListEx {
 	public static void main(String[] args) {
 
 		List<Emplyee> emplyees = new ArrayList<Emplyee>();

@@ -1,4 +1,4 @@
-package main;
+package bean;
 
 public class Emplyee {
 
@@ -6,18 +6,12 @@ public class Emplyee {
 	private String lastName;
 	private int id;
 	
-	// for linkedList 
-	public Emplyee next;
+
 	
 	public Emplyee(String firstName, String lastName, int id) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.id = id;
-	}
-	
-	public Emplyee(String firstName, String lastName, int id, Emplyee next) {
-		this(firstName, lastName, id);
-		this.next = next;
 	}
 	
 	
