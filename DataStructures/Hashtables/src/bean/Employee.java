@@ -1,6 +1,6 @@
 package bean;
 
-public class Emplyee {
+public class Employee {
 
 	private String firstName;
 	private String lastName;
@@ -8,7 +8,7 @@ public class Emplyee {
 	
 
 	
-	public Emplyee(String firstName, String lastName, int id) {
+	public Employee(String firstName, String lastName, int id) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.id = id;
@@ -46,7 +46,7 @@ public class Emplyee {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Emplyee other = (Emplyee) obj;
+		Employee other = (Employee) obj;
 		if (firstName == null) {
 			if (other.firstName != null)
 				return false;

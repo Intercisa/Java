@@ -1,13 +1,13 @@
 package hashtable;
 
-import bean.Emplyee;
+import bean.Employee;
 
 public class StoredEmployee {
 	
 	public String key;
-	public Emplyee emplyee;
+	public Employee emplyee;
 	
-	public StoredEmployee(String key, Emplyee emplyee) {
+	public StoredEmployee(String key, Employee emplyee) {
 		this.key = key;
 		this.emplyee = emplyee;
 	}

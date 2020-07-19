@@ -2,26 +2,26 @@ package hashtable;
 
 import java.util.NoSuchElementException;
 
-import bean.Emplyee;
+import bean.Employee;
 
 // without real hashing strategy
 
 public class SimpleArrayHashtable {
 
 	private final int INIT_CAPACITY = 10; 
-	private Emplyee[] hashtable;
+	private Employee[] hashtable;
 	
 	SimpleArrayHashtable(){
-		hashtable = new Emplyee[INIT_CAPACITY];
+		hashtable = new Employee[INIT_CAPACITY];
 	}
 	
-	public void put(String key, Emplyee emplyee) {
+	public void put(String key, Employee emplyee) {
 		int hashedKey = hashKey(key);
 	 	if(hashtable[hashedKey] != null) System.out.println("This key is already in the position: " + hashedKey +"! rollback[("+ key +")]");
 	 	else hashtable[hashedKey] = emplyee;
 	}
 	
-	public Emplyee get(String key) {
+	public Employee get(String key) {
 		int hashedKey = hashKey(key);
 		if(hashtable[hashedKey] == null) throw new NoSuchElementException();
 		

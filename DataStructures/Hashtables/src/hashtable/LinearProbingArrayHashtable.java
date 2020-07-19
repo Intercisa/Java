@@ -1,6 +1,6 @@
 package hashtable;
 
-import bean.Emplyee;
+import bean.Employee;
 
 
 public class LinearProbingArrayHashtable {
@@ -12,7 +12,7 @@ public class LinearProbingArrayHashtable {
 		hashtable = new StoredEmployee[INIT_CAPACITY];
 	}
 	
-	public void put(String key, Emplyee emplyee) {
+	public void put(String key, Employee emplyee) {
 		int hashedKey = hashKey(key);
 		
 		if(isOccupied(hashedKey)) {
@@ -31,18 +31,18 @@ public class LinearProbingArrayHashtable {
 	 	else hashtable[hashedKey] = new StoredEmployee(key, emplyee);
 	}
 	
-	public Emplyee get(String key) {
+	public Employee get(String key) {
 		int hashedKey = findKey(key);
 		if(hashedKey == -1) return null;
 		
 		return hashtable[hashedKey].emplyee;
 	}
 	
-	public Emplyee remove (String key) {
+	public Employee remove (String key) {
 		int hashedKey = findKey(key);
 		if(hashedKey == -1) return null;
 		
-		Emplyee removedEmloyee = hashtable[hashedKey].emplyee;
+		Employee removedEmloyee = hashtable[hashedKey].emplyee;
 		hashtable[hashedKey] = null;
 		
 		// rehashing 
