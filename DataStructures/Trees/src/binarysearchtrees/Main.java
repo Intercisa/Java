@@ -3,7 +3,6 @@ package binarysearchtrees;
 public class Main {
 
 	public static void main(String[] args) {
-
 		Tree bst = new Tree();
 		bst.insert(25);
 		bst.insert(20);
