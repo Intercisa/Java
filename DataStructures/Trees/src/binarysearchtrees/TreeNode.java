@@ -30,6 +30,23 @@ public class TreeNode {
 			this.rightChild.traverseInOrder();
 	}
 	
+	public void traversePreOrder() {
+		System.out.print(data + ", ");
+		if(leftChild != null ) 
+			this.leftChild.traversePreOrder();
+			
+		if(rightChild != null) 
+			this.rightChild.traversePreOrder();;
+	}
+	
+	public void traversePostOrder() {
+		if(leftChild != null )
+			this.leftChild.traversePostOrder();
+		if(rightChild != null)
+			this.rightChild.traversePostOrder();
+		System.out.print(data + ", ");
+	}
+	
 	public TreeNode get(int value) {
 		if(this.data == value) return this;
 		
@@ -58,7 +75,6 @@ public class TreeNode {
 	public int getMin() {
 		return getMinNode().data;
 	}
-	
 	
 	public int getData() {return data;}
 	public void setData(int data) {this.data = data;}

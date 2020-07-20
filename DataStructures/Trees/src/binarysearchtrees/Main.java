@@ -14,10 +14,8 @@ public class Main {
 		bst.insert(26);
 		bst.insert(22);
 		bst.insert(32);
+		bst.insert(17);
 		
-		bst.traversInOrder();
-		
-		System.out.println("\n-------------------------");
 		
 		System.out.println(bst.get(22));
 		System.out.println(bst.get(22322));
@@ -26,5 +24,25 @@ public class Main {
 		System.out.println(bst.max());
 		System.out.println("\n-------------------------");
 		System.out.println(bst.min());
+		/*
+		bst.traversInOrder();
+		System.out.println("\n-------------------------");
+		bst.delete(15);
+		System.out.println("\n-------------------------");
+		bst.traversInOrder();
+		bst.delete(27);
+		System.out.println("\n-------------------------");
+		bst.traversInOrder();
+		bst.delete(25);
+		System.out.println("\n-------------------------");
+		bst.traversInOrder();
+		bst.delete(7687);
+		System.out.println("\n-------------------------");
+		*/
+		bst.traversInOrder();
+		System.out.println("\n-------------------------");
+		bst.traversPreOrder();
+		System.out.println("\n-------------------------");
+		bst.traversPostOrder();
 	}
 }
