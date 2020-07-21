@@ -20,12 +20,13 @@ public class Main {
 		heap.insert(52);
 		heap.insert(67);
 
+		// heap.printHeap();
+		
+		// heap.delete(0);
 		heap.printHeap();
-		
-		heap.delete(0);
+		System.out.println("-----------------------------");
+		heap.sort();
+		System.out.println("-----------------------------");
 		heap.printHeap();
-		
-		System.out.println(heap.peek());
-		
 	}
 }
