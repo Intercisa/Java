@@ -1,6 +1,6 @@
 package constructbinarytree;
 
-public class FindMinimumRotatedArray {
+public class ConstructTree {
 	public TreeNode buildTree(int[] inorder, int[] postorder) {
 		int len = inorder.length;
 		if(len == 0) return null;
