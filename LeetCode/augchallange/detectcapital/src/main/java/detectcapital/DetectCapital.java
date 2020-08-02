@@ -32,5 +32,4 @@ public class DetectCapital {
             if(Character.isUpperCase(c)) return false;
         return true;
     }
-
 }
