@@ -48,20 +48,17 @@ public class Trie {
 
         char c = word.charAt(start);
         if (c == '.'){
-           boolean tResult = false;
             for (int j = 0; j < 26; j++) {
-                if (node.children[j] != null && dfsSearch(node.children[j], word, start + 1)) {
-                    tResult = true;
-                    break;
-                }
+                if (node.children[j] != null && dfsSearch(node.children[j], word, start + 1))
+                    return true;
             }
-            return tResult;
+            return false;
         }else{
             int index = c - 'a';
             return node.children[index] != null && dfsSearch(node.children[index], word, start + 1);
         }
     }
-
+    
     private boolean isNotValid(String prefix) {
         return prefix == null || prefix.length() == 0;
     }
