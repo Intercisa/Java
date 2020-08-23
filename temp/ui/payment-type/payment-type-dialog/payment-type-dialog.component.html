@@ -1,0 +1,17 @@
+<app-dialog-base
+  (cancel)="cancel()"
+  (save)="save()"
+  [addSaveButton]="!isViewMode"
+  [cancelButtonText]="(isViewMode ? 'Dialog.CloseButton' : 'Dialog.CancelButton') | translate"
+  [dialogTitle]="dialogTitle | translate"
+  [rootAbstractControl]="form">
+  <div [formGroup]="form"
+       gdAreas="name"
+       gdGap="0px 10px"
+       gdRows="auto auto auto auto">
+    <asap-text-field [label]="'Entity.GuaranteeNature.Name' | translate" formControlName="name" gdArea="name">
+    </asap-text-field>
+  </div>
+  <div>&nbsp;</div>
+
+</app-dialog-base>
