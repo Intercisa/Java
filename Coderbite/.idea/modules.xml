@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Coderbite.iml" filepath="$PROJECT_DIR$/.idea/Coderbite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nonrepeatingcharacter/nonrepeatingcharacter.iml" filepath="$PROJECT_DIR$/nonrepeatingcharacter/nonrepeatingcharacter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seatingstudents/seatingstudents.iml" filepath="$PROJECT_DIR$/seatingstudents/seatingstudents.iml" />
+    </modules>
+  </component>
+</project>

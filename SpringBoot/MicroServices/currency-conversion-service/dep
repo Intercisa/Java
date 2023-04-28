@@ -1,0 +1,206 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----< [0;36mcom.in28minutes.microservices:currency-conversion-service[0;1m >------[m
+[[1;34mINFO[m] [1mBuilding currency-conversion-service 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-dependency-plugin:3.1.2:tree[m [1m(default-cli)[m @ [36mcurrency-conversion-service[0;1m ---[m
+[[1;34mINFO[m] com.in28minutes.microservices:currency-conversion-service:jar:0.0.1-SNAPSHOT
+[[1;34mINFO[m] +- org.springframework.boot:spring-boot-starter-actuator:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework.boot:spring-boot-starter:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  |  |  +- ch.qos.logback:logback-classic:jar:1.2.3:compile
+[[1;34mINFO[m] |  |  |  |  \- ch.qos.logback:logback-core:jar:1.2.3:compile
+[[1;34mINFO[m] |  |  |  +- org.apache.logging.log4j:log4j-to-slf4j:jar:2.13.3:compile
+[[1;34mINFO[m] |  |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.13.3:compile
+[[1;34mINFO[m] |  |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.30:compile
+[[1;34mINFO[m] |  |  +- jakarta.annotation:jakarta.annotation-api:jar:1.3.5:compile
+[[1;34mINFO[m] |  |  \- org.yaml:snakeyaml:jar:1.26:compile
+[[1;34mINFO[m] |  +- org.springframework.boot:spring-boot-actuator-autoconfigure:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  |  +- org.springframework.boot:spring-boot-actuator:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  |  \- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.11.0:compile
+[[1;34mINFO[m] |  \- io.micrometer:micrometer-core:jar:1.5.1:compile
+[[1;34mINFO[m] |     +- org.hdrhistogram:HdrHistogram:jar:2.1.12:compile
+[[1;34mINFO[m] |     \- org.latencyutils:LatencyUtils:jar:2.0.3:runtime
+[[1;34mINFO[m] +- org.springframework.boot:spring-boot-starter-web:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework.boot:spring-boot-starter-json:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.11.0:compile
+[[1;34mINFO[m] |  |  \- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.11.0:compile
+[[1;34mINFO[m] |  +- org.springframework.boot:spring-boot-starter-tomcat:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:9.0.36:compile
+[[1;34mINFO[m] |  |  +- org.glassfish:jakarta.el:jar:3.0.3:compile
+[[1;34mINFO[m] |  |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:9.0.36:compile
+[[1;34mINFO[m] |  +- org.springframework:spring-web:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m] |  |  \- org.springframework:spring-beans:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m] |  \- org.springframework:spring-webmvc:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m] |     +- org.springframework:spring-aop:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m] |     \- org.springframework:spring-expression:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m] +- org.springframework.cloud:spring-cloud-starter-config:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework.cloud:spring-cloud-starter:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  |  +- org.springframework.cloud:spring-cloud-context:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  |  \- org.springframework.security:spring-security-rsa:jar:1.0.9.RELEASE:compile
+[[1;34mINFO[m] |  |     \- org.bouncycastle:bcpkix-jdk15on:jar:1.64:compile
+[[1;34mINFO[m] |  |        \- org.bouncycastle:bcprov-jdk15on:jar:1.64:compile
+[[1;34mINFO[m] |  +- org.springframework.cloud:spring-cloud-config-client:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.11.0:compile
+[[1;34mINFO[m] |  \- com.fasterxml.jackson.core:jackson-databind:jar:2.11.0:compile
+[[1;34mINFO[m] |     \- com.fasterxml.jackson.core:jackson-core:jar:2.11.0:compile
+[[1;34mINFO[m] +- org.springframework.cloud:spring-cloud-starter-sleuth:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework.boot:spring-boot-starter-aop:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  |  \- org.aspectj:aspectjweaver:jar:1.9.5:compile
+[[1;34mINFO[m] |  \- org.springframework.cloud:spring-cloud-sleuth-core:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |     +- org.aspectj:aspectjrt:jar:1.9.5:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-context-slf4j:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-messaging:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-rpc:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-spring-web:jar:5.12.3:compile
+[[1;34mINFO[m] |     |  \- io.zipkin.brave:brave-instrumentation-http:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-spring-rabbit:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-kafka-clients:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-kafka-streams:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-httpclient:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-httpasyncclient:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-spring-webmvc:jar:5.12.3:compile
+[[1;34mINFO[m] |     |  \- io.zipkin.brave:brave-instrumentation-servlet:jar:5.12.3:compile
+[[1;34mINFO[m] |     +- io.zipkin.brave:brave-instrumentation-jms:jar:5.12.3:compile
+[[1;34mINFO[m] |     \- io.zipkin.reporter2:zipkin-reporter-metrics-micrometer:jar:2.15.0:compile
+[[1;34mINFO[m] +- org.springframework.cloud:spring-cloud-starter-zipkin:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  \- org.springframework.cloud:spring-cloud-sleuth-zipkin:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |     +- io.zipkin.zipkin2:zipkin:jar:2.21.1:compile
+[[1;34mINFO[m] |     +- io.zipkin.reporter2:zipkin-reporter:jar:2.15.0:compile
+[[1;34mINFO[m] |     +- io.zipkin.reporter2:zipkin-reporter-brave:jar:2.15.0:compile
+[[1;34mINFO[m] |     +- io.zipkin.reporter2:zipkin-sender-kafka:jar:2.15.0:compile
+[[1;34mINFO[m] |     +- io.zipkin.reporter2:zipkin-sender-activemq-client:jar:2.15.0:compile
+[[1;34mINFO[m] |     \- io.zipkin.reporter2:zipkin-sender-amqp-client:jar:2.15.0:compile
+[[1;34mINFO[m] +- org.springframework.amqp:spring-rabbit:jar:2.2.7.RELEASE:compile
+[[1;34mINFO[m] |  +- com.rabbitmq:amqp-client:jar:5.9.0:compile
+[[1;34mINFO[m] |  |  \- org.slf4j:slf4j-api:jar:1.7.30:compile
+[[1;34mINFO[m] |  +- org.springframework.amqp:spring-amqp:jar:2.2.7.RELEASE:compile
+[[1;34mINFO[m] |  |  \- org.springframework.retry:spring-retry:jar:1.2.5.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework:spring-context:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework:spring-messaging:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m] |  \- org.springframework:spring-tx:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m] +- org.springframework.cloud:spring-cloud-starter-openfeign:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework.cloud:spring-cloud-openfeign-core:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  |  \- io.github.openfeign.form:feign-form-spring:jar:3.8.0:compile
+[[1;34mINFO[m] |  |     +- io.github.openfeign.form:feign-form:jar:3.8.0:compile
+[[1;34mINFO[m] |  |     \- commons-fileupload:commons-fileupload:jar:1.4:compile
+[[1;34mINFO[m] |  |        \- commons-io:commons-io:jar:2.2:compile
+[[1;34mINFO[m] |  +- org.springframework.cloud:spring-cloud-commons:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  |  \- org.springframework.security:spring-security-crypto:jar:5.3.3.RELEASE:compile
+[[1;34mINFO[m] |  +- io.github.openfeign:feign-core:jar:10.10.1:compile
+[[1;34mINFO[m] |  +- io.github.openfeign:feign-slf4j:jar:10.10.1:compile
+[[1;34mINFO[m] |  \- io.github.openfeign:feign-hystrix:jar:10.10.1:compile
+[[1;34mINFO[m] |     +- com.netflix.archaius:archaius-core:jar:0.7.6:compile
+[[1;34mINFO[m] |     |  \- com.google.code.findbugs:jsr305:jar:3.0.1:compile
+[[1;34mINFO[m] |     \- com.netflix.hystrix:hystrix-core:jar:1.5.18:compile
+[[1;34mINFO[m] +- org.springframework.cloud:spring-cloud-starter-netflix-ribbon:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework.cloud:spring-cloud-netflix-ribbon:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  |  \- org.springframework.cloud:spring-cloud-netflix-archaius:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework.cloud:spring-cloud-starter-netflix-archaius:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  |  \- commons-configuration:commons-configuration:jar:1.8:compile
+[[1;34mINFO[m] |  +- com.netflix.ribbon:ribbon:jar:2.3.0:compile
+[[1;34mINFO[m] |  |  +- com.netflix.ribbon:ribbon-transport:jar:2.3.0:runtime
+[[1;34mINFO[m] |  |  |  +- io.reactivex:rxnetty-contexts:jar:0.4.9:runtime
+[[1;34mINFO[m] |  |  |  \- io.reactivex:rxnetty-servo:jar:0.4.9:runtime
+[[1;34mINFO[m] |  |  +- javax.inject:javax.inject:jar:1:compile
+[[1;34mINFO[m] |  |  +- io.reactivex:rxnetty:jar:0.4.9:runtime
+[[1;34mINFO[m] |  |  \- com.google.guava:guava:jar:29.0-android:compile
+[[1;34mINFO[m] |  |     +- com.google.guava:failureaccess:jar:1.0.1:compile
+[[1;34mINFO[m] |  |     +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
+[[1;34mINFO[m] |  |     +- org.checkerframework:checker-compat-qual:jar:2.5.5:compile
+[[1;34mINFO[m] |  |     +- com.google.errorprone:error_prone_annotations:jar:2.3.4:compile
+[[1;34mINFO[m] |  |     \- com.google.j2objc:j2objc-annotations:jar:1.3:compile
+[[1;34mINFO[m] |  +- com.netflix.ribbon:ribbon-core:jar:2.3.0:compile
+[[1;34mINFO[m] |  |  \- commons-lang:commons-lang:jar:2.6:compile
+[[1;34mINFO[m] |  +- com.netflix.ribbon:ribbon-httpclient:jar:2.3.0:compile
+[[1;34mINFO[m] |  |  +- commons-collections:commons-collections:jar:3.2.2:runtime
+[[1;34mINFO[m] |  |  +- org.apache.httpcomponents:httpclient:jar:4.5.12:compile
+[[1;34mINFO[m] |  |  |  +- org.apache.httpcomponents:httpcore:jar:4.4.13:compile
+[[1;34mINFO[m] |  |  |  \- commons-codec:commons-codec:jar:1.14:compile
+[[1;34mINFO[m] |  |  +- com.sun.jersey:jersey-client:jar:1.19.1:compile
+[[1;34mINFO[m] |  |  +- com.sun.jersey.contribs:jersey-apache-client4:jar:1.19.1:compile
+[[1;34mINFO[m] |  |  +- com.netflix.servo:servo-core:jar:0.12.21:compile
+[[1;34mINFO[m] |  |  \- com.netflix.netflix-commons:netflix-commons-util:jar:0.3.0:runtime
+[[1;34mINFO[m] |  +- com.netflix.ribbon:ribbon-loadbalancer:jar:2.3.0:compile
+[[1;34mINFO[m] |  |  \- com.netflix.netflix-commons:netflix-statistics:jar:0.1.1:runtime
+[[1;34mINFO[m] |  \- io.reactivex:rxjava:jar:1.3.8:compile
+[[1;34mINFO[m] +- org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework.cloud:spring-cloud-netflix-hystrix:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  +- org.springframework.cloud:spring-cloud-netflix-eureka-client:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  +- com.netflix.eureka:eureka-client:jar:1.9.21:compile
+[[1;34mINFO[m] |  |  +- org.codehaus.jettison:jettison:jar:1.3.7:compile
+[[1;34mINFO[m] |  |  |  \- stax:stax-api:jar:1.0.1:compile
+[[1;34mINFO[m] |  |  +- com.netflix.netflix-commons:netflix-eventbus:jar:0.3.0:compile
+[[1;34mINFO[m] |  |  |  +- com.netflix.netflix-commons:netflix-infix:jar:0.3.0:runtime
+[[1;34mINFO[m] |  |  |  |  +- commons-jxpath:commons-jxpath:jar:1.3:runtime
+[[1;34mINFO[m] |  |  |  |  +- joda-time:joda-time:jar:2.3:runtime
+[[1;34mINFO[m] |  |  |  |  +- org.antlr:antlr-runtime:jar:3.4:runtime
+[[1;34mINFO[m] |  |  |  |  |  +- org.antlr:stringtemplate:jar:3.2.1:runtime
+[[1;34mINFO[m] |  |  |  |  |  \- antlr:antlr:jar:2.7.7:runtime
+[[1;34mINFO[m] |  |  |  |  \- com.google.code.gson:gson:jar:2.8.6:runtime
+[[1;34mINFO[m] |  |  |  \- org.apache.commons:commons-math:jar:2.2:runtime
+[[1;34mINFO[m] |  |  +- javax.ws.rs:jsr311-api:jar:1.1.1:compile
+[[1;34mINFO[m] |  |  +- com.sun.jersey:jersey-core:jar:1.19.1:compile
+[[1;34mINFO[m] |  |  +- com.google.inject:guice:jar:4.1.0:compile
+[[1;34mINFO[m] |  |  |  \- aopalliance:aopalliance:jar:1.0:compile
+[[1;34mINFO[m] |  |  \- com.fasterxml.woodstox:woodstox-core:jar:5.3.0:compile
+[[1;34mINFO[m] |  |     \- org.codehaus.woodstox:stax2-api:jar:4.2:compile
+[[1;34mINFO[m] |  +- com.netflix.eureka:eureka-core:jar:1.9.21:compile
+[[1;34mINFO[m] |  +- org.springframework.cloud:spring-cloud-starter-loadbalancer:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  |  +- org.springframework.cloud:spring-cloud-loadbalancer:jar:2.2.3.RELEASE:compile
+[[1;34mINFO[m] |  |  |  +- org.springframework.boot:spring-boot-starter-validation:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  |  |  |  \- org.hibernate.validator:hibernate-validator:jar:6.1.5.Final:compile
+[[1;34mINFO[m] |  |  |  |     +- jakarta.validation:jakarta.validation-api:jar:2.0.2:compile
+[[1;34mINFO[m] |  |  |  |     +- org.jboss.logging:jboss-logging:jar:3.4.1.Final:compile
+[[1;34mINFO[m] |  |  |  |     \- com.fasterxml:classmate:jar:1.5.1:compile
+[[1;34mINFO[m] |  |  |  +- io.projectreactor:reactor-core:jar:3.3.6.RELEASE:compile
+[[1;34mINFO[m] |  |  |  |  \- org.reactivestreams:reactive-streams:jar:1.0.3:compile
+[[1;34mINFO[m] |  |  |  \- io.projectreactor.addons:reactor-extra:jar:3.3.3.RELEASE:compile
+[[1;34mINFO[m] |  |  +- org.springframework.boot:spring-boot-starter-cache:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  |  |  \- org.springframework:spring-context-support:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m] |  |  \- com.stoyanr:evictor:jar:1.0.0:compile
+[[1;34mINFO[m] |  +- com.netflix.ribbon:ribbon-eureka:jar:2.3.0:compile
+[[1;34mINFO[m] |  \- com.thoughtworks.xstream:xstream:jar:1.4.11.1:compile
+[[1;34mINFO[m] |     +- xmlpull:xmlpull:jar:1.1.3.1:compile
+[[1;34mINFO[m] |     \- xpp3:xpp3_min:jar:1.1.4c:compile
+[[1;34mINFO[m] +- org.springframework.boot:spring-boot-devtools:jar:2.3.1.RELEASE:runtime (optional) 
+[[1;34mINFO[m] |  +- org.springframework.boot:spring-boot:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] |  \- org.springframework.boot:spring-boot-autoconfigure:jar:2.3.1.RELEASE:compile
+[[1;34mINFO[m] \- org.springframework.boot:spring-boot-starter-test:jar:2.3.1.RELEASE:test
+[[1;34mINFO[m]    +- org.springframework.boot:spring-boot-test:jar:2.3.1.RELEASE:test
+[[1;34mINFO[m]    +- org.springframework.boot:spring-boot-test-autoconfigure:jar:2.3.1.RELEASE:test
+[[1;34mINFO[m]    +- com.jayway.jsonpath:json-path:jar:2.4.0:test
+[[1;34mINFO[m]    |  \- net.minidev:json-smart:jar:2.3:test
+[[1;34mINFO[m]    |     \- net.minidev:accessors-smart:jar:1.2:test
+[[1;34mINFO[m]    |        \- org.ow2.asm:asm:jar:5.0.4:test
+[[1;34mINFO[m]    +- jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3:test
+[[1;34mINFO[m]    |  \- jakarta.activation:jakarta.activation-api:jar:1.2.2:test
+[[1;34mINFO[m]    +- org.assertj:assertj-core:jar:3.16.1:test
+[[1;34mINFO[m]    +- org.hamcrest:hamcrest:jar:2.2:test
+[[1;34mINFO[m]    +- org.junit.jupiter:junit-jupiter:jar:5.6.2:test
+[[1;34mINFO[m]    |  +- org.junit.jupiter:junit-jupiter-api:jar:5.6.2:test
+[[1;34mINFO[m]    |  |  +- org.apiguardian:apiguardian-api:jar:1.1.0:test
+[[1;34mINFO[m]    |  |  +- org.opentest4j:opentest4j:jar:1.2.0:test
+[[1;34mINFO[m]    |  |  \- org.junit.platform:junit-platform-commons:jar:1.6.2:test
+[[1;34mINFO[m]    |  +- org.junit.jupiter:junit-jupiter-params:jar:5.6.2:test
+[[1;34mINFO[m]    |  \- org.junit.jupiter:junit-jupiter-engine:jar:5.6.2:test
+[[1;34mINFO[m]    |     \- org.junit.platform:junit-platform-engine:jar:1.6.2:test
+[[1;34mINFO[m]    +- org.mockito:mockito-core:jar:3.3.3:test
+[[1;34mINFO[m]    |  +- net.bytebuddy:byte-buddy:jar:1.10.11:test
+[[1;34mINFO[m]    |  +- net.bytebuddy:byte-buddy-agent:jar:1.10.11:test
+[[1;34mINFO[m]    |  \- org.objenesis:objenesis:jar:2.6:test
+[[1;34mINFO[m]    +- org.mockito:mockito-junit-jupiter:jar:3.3.3:test
+[[1;34mINFO[m]    +- org.skyscreamer:jsonassert:jar:1.5.0:test
+[[1;34mINFO[m]    |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[[1;34mINFO[m]    +- org.springframework:spring-core:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m]    |  \- org.springframework:spring-jcl:jar:5.2.7.RELEASE:compile
+[[1;34mINFO[m]    +- org.springframework:spring-test:jar:5.2.7.RELEASE:test
+[[1;34mINFO[m]    \- org.xmlunit:xmlunit-core:jar:2.7.0:test
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  2.963 s
+[[1;34mINFO[m] Finished at: 2023-03-23T18:07:01+01:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
